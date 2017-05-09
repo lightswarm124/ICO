@@ -1,5 +1,28 @@
 {
   "dependencies": {
-    "web3": "0.17.0-alpha"
-  }
+    "browserify": "^14.3.0",
+    "web3": "^0.18.4"
+  },
+  "name": "icotemplate",
+  "description": "ICO Template",
+  "version": "1.0.0",
+  "main": "console.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lightswarm124/ICO.git"
+  },
+  "keywords": [
+    "ICO",
+    "Ethereum",
+    "Smart Contract"
+  ],
+  "author": "Jerry Qian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lightswarm124/ICO/issues"
+  },
+  "homepage": "https://github.com/lightswarm124/ICO#readme"
 }
