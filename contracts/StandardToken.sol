@@ -1,8 +1,8 @@
-pragma solidity ^0.4.2;
+pragma solidity ^0.4.8;
 
-import "./AbstractToken.sol";
+import "./TokenInterface.sol";
 
-contract StandardToken is AbstractToken {
+contract StandardToken is TokenInterface {
 
     /*
      *  Data structures
@@ -14,6 +14,17 @@ contract StandardToken is AbstractToken {
     /*
      *  Read and write storage functions
      */
+
+    function totalSupply() constant returns (uint256 supply) {
+      return totalSupply;
+    }
+
+    /// @dev Returns number of tokens owned by given address.
+    /// @param _owner Address of token owner.
+    function balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+
     /// @dev Transfers sender's tokens to a given address. Returns success.
     /// @param _to Address of token receiver.
     /// @param _value Number of tokens to transfer.
@@ -44,12 +55,6 @@ contract StandardToken is AbstractToken {
         else {
             return false;
         }
-    }
-
-    /// @dev Returns number of tokens owned by given address.
-    /// @param _owner Address of token owner.
-    function balanceOf(address _owner) constant returns (uint256 balance) {
-        return balances[_owner];
     }
 
     /// @dev Sets approved amount of tokens for spender. Returns success.
